@@ -93,11 +93,11 @@ section.carousel{
     cursor: pointer;
 }
 
-.next {
+.btnnext {
     right: 1rem;
 }
 
-.previous {
+.btnprev {
     left: 1rem;
 }
 

@@ -78,7 +78,7 @@ section.carousel{
     opacity: 1;
 }
 
-.next, .prev{
+.btnnext, .btnprev{
     color: wheat;
     font-size: 3rem;
     position: absolute;

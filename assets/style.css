@@ -227,7 +227,7 @@ section.portfolio .gallery .filters button {
 
 section.portfolio .gallery .filters button.active {
     background-color: #BEB45A;
-    color: white;
+    color: black;
 }
 
 
@@ -421,7 +421,7 @@ section.services .rectangle{
 
 .service-content .price span{
     font-size: 16px;
-    color: #999;
+    color: #444;
     font-weight: 300;
 }
 

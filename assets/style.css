@@ -71,12 +71,10 @@ section.carousel{
     left: 0;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
-    display: none;
 }
 
 .slider-container img.active{
     opacity: 1;
-    display: block;
 }
 
 .btnnext, .btnprev{

@@ -455,7 +455,7 @@ section.contact .form-content{
 }
 
 .form-content input, textarea{
-    background-color: transparent;
+    background-color: #d3cd3c;
     border: #000 1px solid;
     height: 40px;
 }
@@ -472,7 +472,7 @@ section.contact .form-content{
     margin-top: 20px;
     font-size: 16px;
     font-weight: 400;
-    color: #fff;
+    color: black;
 }
 
 section.contact .form-content form{
@@ -493,7 +493,7 @@ section.contact .form-content form{
 
 .form-content p{
     font-size: 16px;
-    color: #666;
+    color: #333;
     margin: 0;
     margin-bottom: 16px;
     line-height: 1.5;

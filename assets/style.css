@@ -45,11 +45,10 @@ nav a {
     color: #000
 }
 
-nav .fa-instagram {
+nav img {
     width: 20px;
-    font-size: 20px !important;
-    line-height: 20px !important;
-    color: gray;
+    height: 20px;
+    object-fit: cover;
 }
 
 
@@ -84,7 +83,6 @@ section.carousel{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.1);
     height: 100%;
     width: 5%;
     display: flex;

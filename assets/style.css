@@ -1,356 +1,762 @@
 body {
-	max-width: 1920px;
-	margin: auto;
+    max-width: 1920px;
+    margin: auto;
 }
+
 * {
-	font-family: 'Inter';
-	font-style: normal;
-}
-.top-header {
-	background-color: white;
-	position: sticky;
-	top:0;
-	z-index: 1000;
-	display: flex;
-	justify-content: space-between;
-	padding-inline: 100px;
-	padding-block: 30px;
-	align-items: center;
+    font-family: 'Inter';
+    font-style: normal;
 }
 
-.top-header .name {
-	font-size: 26px;
+header {
+    background-color: white;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    align-items: center;
+    height: 99px;
+    z-index: 2;
 }
 
-.nav ul {
-	display: flex;
-	list-style-type: none;
-	font-size: 14px;
-	margin-bottom: 0;
+header .logo {
+    font-size: 26px;
+    font-weight: 400;
+    margin: 0;
 }
 
-.nav li {
-	padding-inline: 10px;
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    font-size: 14px;
+    margin: 0;
+    padding-left: 0;
 }
 
-.nav a {
-	text-decoration: none;
-	color: #000
+nav li {
+    padding-inline: 10px;
+    max-width: fit-content;
 }
 
-.social-link img {
-	width: 20px;
+nav a {
+    text-decoration: none;
+    color: #000
 }
 
-#about {
-	display: flex;
-	background-color: #F6D2B8;
-	padding-inline: 100px;
-	padding-block: 100px;
-	position: relative;
+nav .fa-instagram {
+    width: 20px;
+    font-size: 20px !important;
+    line-height: 20px !important;
+    color: gray;
 }
 
-.picture.left::before {
-	content: ' ';
-	background-color: #E5975F;
-	width: 374px;
-	height: 329px;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	z-index: -1;
+
+section.carousel{
+    max-height: 888px;
+    position: relative;
 }
 
-.picture {
-	flex: 1;
-	margin: 0 20px;
-	z-index: 0;
+.slider-container {
+    height: 888px;
+    position: relative;
 }
 
-.picture img {
-	width: 100%;
-
-}
-#about-me {
-	flex: 2
-}
-.about-me__title {
-	margin-top: 1em;
-	margin-bottom: 60px;
-	font-size: 30px;
-}
-.about-me__introduction {
-	font-family: 'Spectral';
-	font-weight: 800;
-	font-style: italic;
-	width: 60%;
-}
-#about-me p {
-	width: 80%;
-	font-size: 14px;
+.slider-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 
-#gallery {
-	/*	min-height: 100vh; */
-}
-.title{
-	text-align: center;
-	padding-block: 2em;
-}
-.gallery .nav {
-	justify-content: center;
-}
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-	color: #fff;
-	background-color: #BEB45A;
-	border-radius:0 ;
-}
-.nav-pills .nav-link {
-	color: #000
-}
-.item-column {
-	position: relative;
-	margin-bottom: 0 !important;
-	padding: 0;
-}
-.item-column::after{
-	content: "";
-	display: block;
-	padding-bottom: 100%;
-
-}
-.gallery-item {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	padding: .5em;
-}
-.mg-prev, .mg-next {
-	width: 30px;
-	height: 30px;
-	border-radius: 00%;
-	justify-content: center;
-	align-items: center;
-	display: flex;
-	font-size: 24px;
+.slider-container img.active{
+    opacity: 1;
 }
 
-.quote {
-	font-family: 'Spectral';
-	font-style: italic;
-	width: 70%;
-	margin: auto;
-	padding-block: 3em;
-}
-.quote__text {
-	font-family: Spectral;
-	font-style: italic;
-	font-weight: 300;
-
-}
-.quote__author {
-	font-family: Spectral;
-	font-weight: 800;
-	font-size: 22px;
+.next, .prev{
+    color: wheat;
+    font-size: 3rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.1);
+    height: 100%;
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
-#services {
-	margin: auto;
-	background-color: #A8D5D8 ;
-	position: relative;
-}
-#services .container::before{
-	content: ' ';
-	background-color: #1C6474;
-	position: absolute;
-	width: 100%;
-	height: 30%;
-	bottom: 0;
-	left: 0;
-	z-index: 0;
+.next {
+    right: 1rem;
 }
 
-#services .container {
-	justify-content: space-between;
-	display: flex;
-	padding : 2em 0;
+.previous {
+    left: 1rem;
+}
+
+section.carousel .indicator {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+section.carousel .indicator .indicator-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+section.carousel .indicator .indicator-dot.active {
+    background-color: #333;
+}
+
+
+
+
+section.apropos {
+    height: 600px;
+    background-color: #F6D2B8;
+    display: flex;
+    gap: 20px;
+    position: relative;
+}
+
+section.apropos .profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 120px;
+    z-index: 1;
+}
+
+section.apropos .profile img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+}
+
+section.apropos .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section.apropos .text h2 {
+    font-size: 30px;
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: 50px;
+}
+
+section.apropos .text p.text1 {
+    font-size: 16px;
+    font-family: 'Spectral';
+    font-weight: 800;
+    font-style: italic;
+    margin: 0;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: 480px;
+    height: 80px;
+    line-height: 20px;
+}
+
+section.apropos .text p.text2 {
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: 20px;
+    width: 640px;
+    height: 126px;
+    line-height: 20px;
+}
+
+section.apropos .square {
+    width: 374px;
+    height: 329px;
+    background-color: #ff6a00;
+    align-self: flex-end;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+}
+
+
+
+section.portfolio .gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section.portfolio .gallery h3 {
+    font-size: 30px;
+    font-weight: 400;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+}
+
+section.portfolio .gallery .filters {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+section.portfolio .gallery .filters button {
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    width: auto;
+    padding: 0 15px;
+    height: 40px;
+}
+
+section.portfolio .gallery .filters button.active {
+    background-color: #BEB45A;
+    color: white;
+}
+
+
+section.portfolio .gallery .gallery-img {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 0 27px;
+}
+
+section.portfolio .gallery .gallery-item {
+    object-fit: cover;
+    margin: 10px;
+    cursor: pointer;
+}
+
+section.portfolio .gallery .gallery-item img {
+    object-fit: cover;
+    width: 440px;
+    height: 440px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0);
+    text-align: center;
+    transition: background-color 0.5s ease;
+}
+
+.modal-content {
+    padding-top: 100px;
+    max-width: 466px;
+    max-height: 699px;
+    top: -100%;
+    margin: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: top 0.5s ease;
+}
+
+.modal-content img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    object-fit: contain;
+    border: 10px solid white;
+    border-radius: 5px;
+}
+
+.modal-content .modal-btn {
+    padding-top: 100px;
+    position: absolute;
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.modal-content .btn-next {
+    right: -50px;
+}
+
+.modal-content .btn-previous {
+    left: -50px;
+}
+
+.modal i{
+    color: white;
+}
+
+
+.citation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 353px;
+    max-width: 1344px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.citation figure{
+    max-width: 1344px;
+}
+
+.citation p{
+    font-size: 2.5rem;
+    font-family: 'Spectral';
+    font-weight: 300;
+    font-style: italic;
+    margin: 0;
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+.citation figcaption{
+    font-family: 'Spectral';
+    margin-left: 35px;
+    font-style: italic;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+section.services{
+    display: flex;
+    text-align: center;
+    padding: 20px;
+    background-color: #A8D5D8;
+    height: 554px;
+    flex-direction: column;
+    position: relative;
+    z-index: 0;
+}
+
+section.services .title{
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin: 0;
+    margin-bottom: 8px;
+    padding: 56px 0;
+}
+
+section.services .container{
+    display: flex;
+    align-self: center;
+    gap: 70px;
+    position: relative;
+}
+
+section.services .service-content{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 390px;
+    height: 337px;
+    text-align: left;
+    gap: 150px;
+}
+
+section.services .rectangle{
+    width: 100%;
+    height: 166px;
+    background-color: #1C6474;
+    align-self: flex-end;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.service-content .description h3{
+    font-size: 28px;
+    font-style: normal;
+    font-family: "Inter";
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: 8px;
+}
+
+.service-content .description p{
+    font-size: 16px;
+    color: #666;
+    margin: 0;
+    margin-bottom: 16px;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+.service-content .price h4{
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+    margin-bottom: 8px;
+    font-weight: 400;
+}
+
+.service-content .price span{
+    font-size: 16px;
+    color: #999;
+    font-weight: 300;
+}
+
+
+section.contact{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #D8D3A8;
+    height: 650px;
+    position: relative;
+    z-index: 0;
+    justify-content: center;
+    gap: 50px;
+}
+
+section.contact .container{
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+    position: relative;
+}
+
+section.contact .form-content{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    padding: 20px;
+    text-align: left;
+    width: 100%;
+}
+
+.form-content input, textarea{
+    background-color: transparent;
+    border: #000 1px solid;
+    height: 40px;
+}
+
+.form-content textarea{
+    height: 80px;
+    line-height: 20px;
+    font-size: 16px;
+}
+
+.form-content input[type="submit"]{
+    background-color: #BEB45A;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+}
+
+section.contact .form-content form{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 110%;
+}
+
+.form-content h3{
+    font-size: 28px;
+    font-style: normal;
+    font-family: "Inter";
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: 8px;
+}
+
+.form-content p{
+    font-size: 16px;
+    color: #666;
+    margin: 0;
+    margin-bottom: 16px;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+
+
+section.contact .picture{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    margin-left: 200px;
+}
+
+section.contact img{
+    width: 418px;
+    height: 417px;
+    object-fit: cover;
+}
+
+
+section.contact .square{
+    width: 374px;
+    height: 329px;
+    background-color: #BEB45A;
+    align-self: flex-start;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+
+
+
+@media all and (max-width: 1024px){
+    section.apropos .text p.text1, section.apropos .text p.text2{
+        width: 390px;
+    }
+
+    section.portfolio .gallery .gallery-img{
+        gap: 0;
+    }
+
+    section.portfolio .gallery .gallery-item{
+        width: 320px;
+        height: 320px;
+    }
+
+    section.portfolio .gallery .gallery-item img{
+        width: 100%;
+        height: 100%;
+    }
+
+    section.services .service-content{
+        gap: 100px;
+    }
+
+    section.contact .form-content form{
+        width: 70%;
+    }
+
+    section.contact .picture{
+        margin-left: 0;
+        margin-right: 40px;
+    }
 
 }
 
-.service {
-	background-color: white;
-	max-width: 390px;
-	width: 30%;
-	height: 337px;
-	padding: 1em;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	z-index: 1;
+
+@media all and (max-width: 768px){
+
+
+    section.carousel{
+        height: auto;
+    }
+
+    section.carousel .slider-container{
+        height: 355px;
+    }
+
+    section.carousel img{
+        width: 768px;
+    }
+
+    section.apropos{
+        flex-direction: column;
+        height: auto;
+        height: 807px;
+    }
+
+    section.apropos .profile{
+        padding-left: 0;
+        padding-top: 80px;
+    }
+
+    section.apropos .profile img{
+        width: 284px;
+        height: 284px;
+    }
+
+    section.apropos .text{
+        align-items: center;
+        padding: 20px;
+    }
+
+    section.apropos .text h2{
+        margin-bottom: 20px;
+    }
+
+    section.apropos .text p.text1, section.apropos .text p.text2{
+        width: auto;
+        margin-bottom: 0;
+        height: auto;
+    }
+
+    section.apropos .square{
+        top:0;
+        width: 100%;
+        height: 30%;
+    }
+
+    section.portfolio .gallery .gallery-img{
+        gap: 0;
+    }
+
+    section.portfolio .gallery .gallery-item{
+        width: 240px;
+        height: 240px;
+        margin: 8px;
+    }
+
+
+    .citation{
+        height: auto;
+        padding: 20px 0;
+    }
+
+
+    section.services{
+        height: auto;
+        padding: 0;
+    }
+
+    section.services .container{
+        flex-direction: column;
+        align-self: auto;
+        margin: 0 20px;
+        padding-bottom: 20px;
+        gap: 50px;
+    }
+
+    section.services .service-content{
+        margin-bottom: 20px;
+        max-width: 100%;
+        height: auto;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: left;
+        gap: 0;
+    }
+
+    section.services .rectangle{
+        width: 230px;
+        height: 100%;
+        right: 0;
+        left: auto;
+    }
+
+    section.contact{
+        height: auto;
+        padding: 100px 0;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    section.contact img{
+        width: 272px;
+        height: 272px;
+    }
+
+
+    section.contact .square{
+        width: 100%;
+        height: 30%;
+    }
+
 }
 
-#contact {
-	margin: auto;
-	background-color: #D8D3A8 ;
-	position: relative;
-	padding-inline: 100px;
-	padding-block: 100px;
-}
 
-#contact .container {
-	display: flex;
-}
-.picture.right::before {
-	content: ' ';
-	background-color: #BEB45A;
-	width: 374px;
-	height: 329px;
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	z-index: -1;
-}
-.form-container {
-	flex : 2;
+@media all and (max-width:425px){
+    header{
+        flex-direction: column;
+    }
 
+    section.carousel {
+        height: auto;
+    }
+
+    section.carousel img{
+        width: 100%;
+        object-fit: cover;
+    }
+
+    section.apropos{
+        height: auto;
+        padding: 20px;
+    }
+
+    section.apropos .profile img{
+        width: 200px;
+        height: 200px;
+    }
+
+    section.apropos .text p.text1, section.apropos .text p.text2{
+        width: 100%;
+        height: auto;
+    }
+
+    section.portfolio .gallery .filters{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .citation p{
+        font-size: 1.5rem;
+    }
+
+    section.services .rectangle{
+        width: 96px;
+    }
+
+    section.contact .form-content {
+        align-items: center;
+    }
+
+    section.contact .picture{
+        margin-right: 0;
+    }
+
+    section.contact .picture img{
+        width: 186px;
+        height: 186px;
+    }
+
+    section.contact .square{
+        width: 100%;
+        height: 150px;
+    }
+
+    .modal .modal-content{
+        width: 320px;
+    }
+
+    .modal .modal-content .btn-next{
+        right: -30px;
+    }
+
+    .modal .modal-content .btn-previous{
+        left: -30px;
+    }
 }
-form {
-	display: flex;
-	flex-direction: column;
-	width: 70%;
-	align-items: flex-start;
-}
-
-form input {
-	width: 100%;
-	background-color: transparent;
-	border: solid 1px;
-	height: 2.5em;
-	margin-bottom: 20px;
-}
-
-form textarea {
-	width: 100%;
-	background-color: transparent;
-	border: solid 1px;
-	height: 5em;
-	line-height: 2.5em;
-	font-size: 1.2em;
-	margin-bottom: 20px;
-}
-input[type="submit"] {
-	background-color: #BEB45A;
-	padding: .5em 1em
-}
-
-@media all and (max-width: 1180px) {
-	.picture {
-		flex : 2;
-	}
-	#about, #contact .container {
-		align-items: center;
-	}
-	.about-me__title {
-		margin-top: 0;
-		margin-bottom: 1em;
-	}
-	#about-me h6, #about-me p {
-		width: 100%;
-	}
-}
-
-@media all and (max-width: 1000px) {
-	#about{
-		flex-direction: column;
-
-	}
-	.picture {
-		width: 50%;
-	}
-	.picture.left::before {
-		width: 100%;
-		height: 30%;
-		position: absolute;
-		bottom: auto;
-		top: 0;
-		left: 0;
-		z-index: -1;
-	}
-	.about-me__title{
-		text-align: center;
-		margin-top: 1em;
-	}
-	#services .container {
-		flex-direction: column;
-	}
-	.service {
-		width: 100%;
-		max-width: 100%;
-		height: auto;
-		margin: 2em 0
-	}
-	.service__description{
-		margin-bottom: 1em;
-	}
-
-	#services .container::before{
-		width: 30%;
-		height: 100%;
-		bottom: 0;
-		right: 0;
-		left: auto;
-		z-index: 0;
-	}
-
-	#contact .container {
-		flex-direction: column;
-	}
-	#contact .picture.right {
-		margin-top: 1em;
-	}
-	.picture.right::before {
-		width: 100%;
-		height: 30%;
-		position: absolute;
-		bottom: 0;
-		right: 0;
-		z-index: -1;
-	}
-}
-
-@media all and (max-width: 650px) {
-	.top-header {
-		flex-direction: column;
-		padding-inline: 0;
-	}
-	.top-header .nav, .top-header .nav ul {
-		width: 100%;
-		padding: 0 0 0 0;
-	}
-	.top-header .nav li {
-		flex: 1;
-		padding-block: 1em;
-		text-align: center;
-	}
-	.picture.left::before, .picture.right::before {
-		height: 150px;
-	}
-	#services .container {
-		align-items: center;
-	}
-	.service {
-		max-width: 90%;
-	}
-	#about, #contact {
-		padding-inline: 2em;
-		padding-block: 2em;
-	}
-	form {
-		width: 100%;
-	}
-	.picture {
-		width: 80%;
-	}
-}
-

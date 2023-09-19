@@ -89,14 +89,15 @@ section.carousel{
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .btnnext {
-    right: 1rem;
+    right: 0;
 }
 
 .btnprev {
-    left: 1rem;
+    left: 0;
 }
 
 section.carousel .indicator {
